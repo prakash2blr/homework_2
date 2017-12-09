@@ -66,9 +66,42 @@ router.post("/",function(request,response,next) {
 });
 
 router.put("/",function(request,response,next) {
-	let userAll = new UserModel(),
-		userDetails = userAll.updateByUserId('userid');
-	response.status(200).json(userDetails);	
+		let requestBody = request.body,
+			secretKey = process.env.NODE_ENV,
+		  	tokenheader = request.headers['authorization'],
+		  	token,
+		  	payLoad={},
+		  	userAll,
+		  	userid = requestBody.userid,
+		  	name = requestBody.name,
+			email = requestBody.email,
+			title = requestBody.title,
+			empcode = requestBody.empcode,
+			phone = requestBody.phone,
+			userObj={
+				"name":name,
+				"email":email,
+				"job_title":title,
+				"employee_code":empcode,
+				"phone":phone
+			};
+	 	if(tokenheader){
+  			token=tokenheader.split(" ")[1];
+  			payLoad=jwt.decode(token, secretKey, false, 'HS512');
+			if(payLoad.iss){
+				userAll = new UserModel();
+				userAll.updateByUserId(userObj,userid);
+				response.status(200).json(`User ${userid} updated!!!`);	
+			}
+			else{
+				response.status(401).send("Not Authorized!!!");
+			}
+		}
+		else{
+			response.status(403).json({
+	            error: 'Forbidden: Token does not exists.'
+	        });
+		}	
 });
 
 router.delete("/",function(request,response,next) {

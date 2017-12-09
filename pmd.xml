@@ -20,6 +20,15 @@
       rule="ComplexityViolation">
       The Complexity is too high. The value is 3
     </violation>
+
+    <violation
+      beginline="68"
+      class="app/controllers/user.js"
+      method="&lt;anonymous&gt;"
+      priority="info"
+      rule="ComplexityViolation">
+      The Complexity is too high. The value is 3
+    </violation>
 </file>
 
 <file name="index.js"></file>

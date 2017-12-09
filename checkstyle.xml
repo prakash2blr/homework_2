@@ -31,6 +31,17 @@
     source="&lt;anonymous&gt;"
     />
   
+  <error
+    line="68"
+    severity="info"
+    message="Cyclomatic: 3,
+    Halstead: 8.8540
+    | Effort: 7520.8
+    | Volume: 849.41
+    | Vocabulary: 58"
+    source="&lt;anonymous&gt;"
+    />
+  
 </file>
 
 

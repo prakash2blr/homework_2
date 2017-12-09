@@ -52,7 +52,7 @@ class UserModel{
 		this.updateByUserId = function (updateObj,userid) {
 			let query="UPDATE emp_users SET ? WHERE id = ?";
 			return new Promise(function(resolve, reject) { 
-				db.executeQuery(query,[userid],function(err,res){
+				db.executeQuery(query,[updateObj,userid],function(err,res){
 					if(err){
 						reject(err);
 					}

@@ -14,16 +14,17 @@ module.exports = {
 		
 	},	
 
-	executeQuery: function(query, callback){
+	executeQuery: function(query,parms,callback){
 		this.pool.getConnection(function(err, connection) {
 			  if(err){
 			  	return console.log('error in getting connection from pool:', err);
 			  }
-		 	connection.query(query, function (error, results, fields) {
+		 	connection.query(query,parms, function (error, results, fields) {
 				if(error){
 				   	return callback(error);
 				}
 				callback(null, results);
+				connection.release();
 			});
 		});
 	}

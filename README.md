@@ -72,4 +72,3 @@
 		<li>Response : Response Text</li>
 	</ul>
 
-### Update is dummy API<br />
