@@ -22,8 +22,6 @@ class UserModel{
 		};
 		this.createUser = function (userObj) {
 			let query="INSERT INTO emp_users SET ?";
-			//let query="INSERT INTO emp_users (name,email,job_title,employee_code,phone)"+
-			//"VALUES ('"+name+"','"+email+"','"+title+"','"+empcode+"','"+phone+"')";
 			console.log(query);
 			return new Promise(function(resolve, reject) { 
 				db.executeQuery(query,userObj,function(err,res){
