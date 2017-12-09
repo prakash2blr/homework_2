@@ -48,6 +48,7 @@ class UserModel{
 				});
 			});
 		};
+		
 		this.updateByUserId = function (updateObj,userid) {
 			let query="UPDATE emp_users SET ? WHERE id = ?";
 			return new Promise(function(resolve, reject) { 
