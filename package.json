@@ -1,0 +1,27 @@
+{
+  "name": "lol",
+  "version": "1.0.0",
+  "description": "Its a homework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodejs index.js"
+  },
+  "author": "Prakash Revanna",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "jwt-simple": "^0.5.1",
+    "moment": "^2.19.3",
+    "mysql": "^2.15.0",
+    "request": "^2.83.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-complexity": "^1.1.0",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-jshint": "^1.1.0"
+  }
+}
