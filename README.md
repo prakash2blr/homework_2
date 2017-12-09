@@ -61,6 +61,15 @@
 		<li>URL : `http://<domain>:port(default is 3001 )/api/user`</li>
 		<li>Method : PUT</li>
 		<li>Header : `Authorization : Bearer [auth token from authenticate api]`</li>
+		<li>Payload : <br />{<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"userid":"userid",<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name":"name",<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"email":"email"<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title":"title",<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"empcode":"empcode"<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"phone":"phone"<br />		
+			}
+		</li>
 		<li>Response : Response Text</li>
 	</ul>
 
@@ -69,6 +78,10 @@
 		<li>URL : `http://<domain>:port(default is 3001 )/api/user`</li>
 		<li>Method : DELETE</li>
 		<li>Header : `Authorization : Bearer [auth token from authenticate api]`</li>
+		<li>Payload : <br />{<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"userid":"userid",<br />	
+			}
+		</li>
 		<li>Response : Response Text</li>
 	</ul>
 
