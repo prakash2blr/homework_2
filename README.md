@@ -72,4 +72,4 @@
 		<li>Response : Response Text</li>
 	</ul>
 
-### Update and Delete are dummy APIs<br />
+### Update is dummy API<br />
