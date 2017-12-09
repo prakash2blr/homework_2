@@ -18,18 +18,6 @@
 
 
 
-<file name="index.js">
-  
-</file>
-
-
-
-<file name="app/controllers/authenticate.js">
-  
-</file>
-
-
-
 <file name="app/controllers/user.js">
   
   <error
@@ -42,6 +30,18 @@
     | Vocabulary: 47"
     source="&lt;anonymous&gt;"
     />
+  
+</file>
+
+
+
+<file name="index.js">
+  
+</file>
+
+
+
+<file name="app/controllers/authenticate.js">
   
 </file>
 

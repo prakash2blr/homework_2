@@ -5,9 +5,9 @@ class UserModel{
 	constructor(){
 		db.createConnectionPool();
 		this.getUserDetails = function (userid,email) {
-			let query="SELECT * FROM emp_users WHERE id = "+userid;
+			let query="SELECT * FROM emp_users WHERE id = ?";
 			return new Promise(function(resolve, reject) { 
-				db.executeQuery(query,function(err,res){
+				db.executeQuery(query,[userid],function(err,res){
 					if(err){
 						reject(err);
 					}
@@ -20,12 +20,13 @@ class UserModel{
 				});
 			});
 		};
-		this.createUser = function (name,email,empcode,phone,title) {
-			let query="INSERT INTO emp_users (name,email,job_title,employee_code,phone)"+
-			"VALUES ('"+name+"','"+email+"','"+title+"','"+empcode+"','"+phone+"')";
+		this.createUser = function (userObj) {
+			let query="INSERT INTO emp_users SET ?";
+			//let query="INSERT INTO emp_users (name,email,job_title,employee_code,phone)"+
+			//"VALUES ('"+name+"','"+email+"','"+title+"','"+empcode+"','"+phone+"')";
 			console.log(query);
 			return new Promise(function(resolve, reject) { 
-				db.executeQuery(query,function(err,res){
+				db.executeQuery(query,userObj,function(err,res){
 					if(err){
 						reject(err);
 					}
@@ -34,9 +35,9 @@ class UserModel{
 			});
 		};
 		this.getUserById = function (userid) {
-			let query="SELECT * FROM emp_users WHERE id = "+userid;
+			let query="SELECT * FROM emp_users WHERE id = ?";
 			return new Promise(function(resolve, reject) { 
-				db.executeQuery(query,function(err,res){
+				db.executeQuery(query,[userid],function(err,res){
 					if(err){
 						reject(err);
 					}
@@ -49,13 +50,35 @@ class UserModel{
 				});
 			});
 		};
-		this.updateByUserId = function (userid) {
-			console.log("User Update API was called");
-			return "User Updated";
+		this.updateByUserId = function (updateObj,userid) {
+			let query="UPDATE emp_users SET ? WHERE id = ?";
+			return new Promise(function(resolve, reject) { 
+				db.executeQuery(query,[userid],function(err,res){
+					if(err){
+						reject(err);
+					}
+					if(err){
+						reject(err);
+					}
+					resolve(true);
+				});
+			});
 		};
 		this.deleteByUserId = function (userid) {
-			console.log("User Delete API was called");
-			return "User Deleted";
+			let query="DELETE FROM emp_users WHERE id = ?";
+			return new Promise(function(resolve, reject) { 
+				db.executeQuery(query,[userid],function(err,res){
+					if(err){
+						reject(err);
+					}
+					if(res.length){
+						resolve(JSON.stringify(res[0]));
+					}
+					else{
+						resolve(false);
+					}
+				});
+			});
 		};				
 	}
 }

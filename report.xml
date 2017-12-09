@@ -13,12 +13,6 @@
     | Vocabulary: 42" />
   
 </file>
-<file name="index.js">
-  
-</file>
-<file name="app/controllers/authenticate.js">
-  
-</file>
 <file name="app/controllers/user.js">
   
   <issue
@@ -30,6 +24,12 @@
     | Effort: 4527.4
     | Volume: 538.79
     | Vocabulary: 47" />
+  
+</file>
+<file name="index.js">
+  
+</file>
+<file name="app/controllers/authenticate.js">
   
 </file>
 <file name="app/db/db.js">

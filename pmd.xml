@@ -11,10 +11,6 @@
     </violation>
 </file>
 
-<file name="index.js"></file>
-
-<file name="app/controllers/authenticate.js"></file>
-
 <file name="app/controllers/user.js">
     <violation
       beginline="9"
@@ -25,6 +21,10 @@
       The Complexity is too high. The value is 3
     </violation>
 </file>
+
+<file name="index.js"></file>
+
+<file name="app/controllers/authenticate.js"></file>
 
 <file name="app/db/db.js"></file>
 
